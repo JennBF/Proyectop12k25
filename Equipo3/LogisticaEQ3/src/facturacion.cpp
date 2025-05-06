@@ -1,11 +1,11 @@
-// Angoly Araujo Mayo 2025
+//Angoly Araujo  Mayo 2025 9959-24-17623
 #include "facturacion.h" // Inclusión del encabezado donde están declaradas las funciones de la clase Facturacion
 #include <iostream> // Inclusión de la biblioteca estándar para entrada/salida
 using namespace std;
 
 // Variables externas definidas en otro lugar del programa
 extern usuarios usuarioRegistrado; // Objeto global para el usuario registrado
-extern bitacora auditoria;         // Objeto global para el registro de auditorías
+extern bitacora auditoria; // Objeto global para el registro de auditorías
 
 // Método principal que gestiona el menú de facturación
 void Facturacion::gestionFacturacion() {
@@ -13,7 +13,7 @@ void Facturacion::gestionFacturacion() {
     do {
         system("cls"); // Limpia la pantalla
         cout << "\t\t========================================" << endl;
-        cout << "\t\t| FACTURACION Y ANALISIS - LOGISTICA    |" << endl;
+        cout << "\t\t| FACTURACION Y ANALISIS - LOGISTICA |" << endl;
         cout << "\t\t========================================" << endl;
         cout << "\t\t 1. Generar factura" << endl;
         cout << "\t\t 2. Consultar estado de pago" << endl;
@@ -21,18 +21,18 @@ void Facturacion::gestionFacturacion() {
         cout << "\t\t 4. Reportes financieros" << endl;
         cout << "\t\t 5. Volver al menu anterior" << endl;
         cout << "\t\t========================================" << endl;
-        cout << "\t\tOpcion a escoger: ";
+        cout << "\t\tOpción a escoger: ";  // Corrección aquí
         cin >> opcion; // Captura la opción del usuario
 
         // Evaluación de la opción usando switch
         switch(opcion) {
-            case 1: generarFactura(); break;              // Opción 1: Generar factura
-            case 2: consultarEstadoPago(); break;         // Opción 2: Consultar estado de pago
-            case 3: registrarPago(); break;               // Opción 3: Registrar pago
-            case 4: verReportesFinancieros(); break;      // Opción 4: Ver reportes financieros
-            case 5: break;                                // Opción 5: Salir del menú
+            case 1: generarFactura(); break;   // Opción 1: Generar factura
+            case 2: consultarEstadoPago(); break;   // Opción 2: Consultar estado de pago
+            case 3: registrarPago(); break;   // Opción 3: Registrar pago
+            case 4: verReportesFinancieros(); break;   // Opción 4: Ver reportes financieros
+            case 5: break;   // Opción 5: Salir del menú
             default:
-                cout << "\n\t\tOpcion invalida!"; // Mensaje de error para opción no válida
+                cout << "\n\t\tOpción inválida!"; // Mensaje de error para opción no válida
                 cin.get();
         }
     } while(opcion != 5); // El menú se repite hasta que el usuario elija salir
@@ -65,4 +65,3 @@ void Facturacion::verReportesFinancieros() {
     auditoria.insertar(usuarioRegistrado.getNombre(), "400", "REPFIN"); // Registro en la bitácora
     system("pause");
 }
-
